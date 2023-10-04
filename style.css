@@ -1,0 +1,117 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat:wght@300;400&display=swap');
+
+
+  html, body {
+    padding: 0;
+    margin: 0;
+    background-color: #1a1a2a;
+  }
+
+  #header {
+    background-color: #1a1a2a;
+    padding : 1.2em;
+  }
+
+  hr {
+    background-color: rgb(150, 213, 255);
+    margin: 0 1.5em;
+    height: 2px;
+    border: none;
+    border-radius :2px;
+  }
+  #Title {
+    margin: 0 auto;
+    width: 95%;
+    text-align: center;
+    align-self: center;
+    font-family: "Montserrat";
+    font-weight: 300;
+    font-size: 2em;
+    color : aliceblue;
+    display: inline-block;
+}
+
+i{
+  font-family: "Aclonica";
+  color: rgb(150, 213, 255);
+}
+
+.lateral {
+  margin: 1.5em 2em;
+  border-radius: 10px;
+  float: right;
+  width: 25%;
+  background-color: #2e2e41;
+  text-align: center;
+}
+
+.canvas {
+  width: 60%;
+  display: inline-block;
+}
+
+.array {
+  display : inline-block;
+  width: 100%;
+  margin : 0 auto;
+  padding: 5em;
+}
+
+.element {
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: rgb(150, 213, 255);
+  display: inline-block;
+  text-align: center;
+  margin: 10px 15px;
+  padding: 18px;
+  border-radius: 1rem;
+  font-size: 1.2em;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.iconBtn {
+  background-color: transparent;
+  border: none;
+  transition : 0.3s ease-out;
+}
+
+.iconBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.lateral_btn {
+  background-color: #FAFAFA;
+  color: black;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  padding: 1em;
+  margin: 1.3rem auto;
+  border: none;
+  transition : 0.3s ease-out;
+  border-radius: 5px;
+  display: block;
+}
+
+.lateral_btn:hover {
+  background-color: #DADADA; /* Green */
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#data {
+  margin: 2em;
+}
+
+#data > label {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, 
+    Verdana, sans-serif;
+  font-weight: 300;
+  margin: 1em;
+}
+

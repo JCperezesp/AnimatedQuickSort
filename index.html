@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Document</title>   
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://kit.fontawesome.com/7fce8be79d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="header">
+            <h1 id="Title">
+                ANIMATED <i>QUICKSORT</i>
+            </h1>
+            <button class="iconBtn">
+                <i v-bind:class="ThemeFA.class" id="themeIcon " v-on:click="switchTheme(ThemeFA)"></i>
+            </button>
+        </div>
+    <hr/>
+        <div>
+            <div class="canvas">
+                <div class="array">
+                    <!-- v-for para crear varios divs, uno para cada elemento de la lista-->>
+                    <!-- v-bind:id o :id para linkar el id del elemento del DOM con su posición en el array-->
+                    <div class="element" v-for="element in elements" :id="elements.indexOf(element)">{{element}}</div>
+                </div>
+            </div>
+            <div class="lateral">
+                <button class="lateral_btn" id="strategy_btn">
+                    {{message}}
+                </button>
+                <form id="data">
+                    <label for="nodes">Nº Nodos</label>
+                    <input type="number" id="nodes"/>
+                </form>
+                <button class="lateral_btn" id="create_btn" v-on:click="quickSortArray">
+                    ANIMAR
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>
