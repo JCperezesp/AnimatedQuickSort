@@ -29,14 +29,14 @@
                 </div>
             </div>
             <div class="lateral">
-                <button class="lateral_btn" id="strategy_btn">
+                <button class="lateral_btn" id="regen_btn" @click="regenVector">
                     {{message}}
                 </button>
                 <form id="data">
                     <label for="nodes">Nº Nodos</label>
                     <input type="number" id="nodes"/>
                 </form>
-                <button class="lateral_btn" id="create_btn" v-on:click="quickSortArray">
+                <button class="lateral_btn" id="create_btn" v-on:click="quickSortArray(elements, 0, elements.length)">
                     ANIMAR
                 </button>
             </div>
