@@ -1,7 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
-      message: "REGENERAR VECTOR",
+      message: "CREAR VECTOR",
       elements: [89, 45, 15, 33, 7, 24, 71, 3],
       ArrayLength: 8,
       selectedVariant: 0,
@@ -9,13 +9,19 @@ const app = Vue.createApp({
         {
           FAclass: "fa-solid fa-circle-half-stroke fa-xl",
           type: 0,
-          primaryColor: "#1a1a2a",
-          secondaryColor: "#96d5ff",
+          primaryColor: "darkThemePrimary",
+          TitleColor: "darkThemeTitle",
+          italicColor: "#96d5ff",
+          lateralColor: "darkThemeLateral",
+          itemColor: "darkThemeItem"
         }, {
           FAclass: "fa-solid fa-circle-half-stroke fa-flip-horizontal fa-xl",
           type: 1,
-          primaryColor: "#96d5ff",
-          secondaryColor: "#1a1a2a",
+          primaryColor: "lightThemePrimary",
+          TitleColor: "lightThemeTitle",
+          italicColor: "#0099ff",
+          lateralColor: "lightThemeLateral",
+          itemColor: "lightThemeItem"
         }
       ]
     }
@@ -53,25 +59,36 @@ const app = Vue.createApp({
 
 
     },
-    switchTheme(ThemeFA) {
+    switchTheme() {
       console.log("SelectedVariant vale " + this.selectedVariant)
       if (this.selectedVariant === 1) {
         this.selectedVariant = 0
+        document.body.style.backgroundColor = "#1a1a2a"
       }
       else {
         this.selectedVariant = 1
+        document.body.style.backgroundColor = "#FEFEFE"
       }
     }
   },
-    computed: {
-      FAicon() {
-        return this.ThemeVariants[this.selectedVariant].FAclass;
-      },
-      primaryColor() {
-        return this.ThemeVariants[this.selectedVariant].primaryColor;
-      },
-      secondaryColor() {
-        return this.ThemeVariants[this.selectedVariant].secondaryColor;
-      }
+  computed: {
+    FAicon() {
+      return this.ThemeVariants[this.selectedVariant].FAclass;
+    },
+    backgroundClassName() {
+      return this.ThemeVariants[this.selectedVariant].primaryColor;
+    },
+    fontClassName() {
+      return this.ThemeVariants[this.selectedVariant].TitleColor;
+    },
+    italicColor() {
+      return this.ThemeVariants[this.selectedVariant].italicColor;
+    },
+    lateralClassName() {
+      return this.ThemeVariants[this.selectedVariant].lateralColor;
+    },
+    itemClassName() {
+      return this.ThemeVariants[this.selectedVariant].itemColor;
     }
-  })
+  }
+})

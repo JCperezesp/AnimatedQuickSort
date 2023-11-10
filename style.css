@@ -5,11 +5,11 @@
   html, body {
     padding: 0;
     margin: 0;
+    height:100%;
     background-color: #1a1a2a;
   }
 
   #header {
-    background-color: #1a1a2a;
     padding : 1.2em;
   }
 
@@ -28,13 +28,11 @@
     font-family: "Montserrat";
     font-weight: 300;
     font-size: 2em;
-    color : aliceblue;
     display: inline-block;
 }
 
 i{
   font-family: "Aclonica";
-  color: rgb(150, 213, 255);
 }
 
 .lateral {
@@ -44,6 +42,7 @@ i{
   width: 25%;
   background-color: #2e2e41;
   text-align: center;
+  box-shadow: 0 0 0.5em  rgba(0,0,0,0.6);
 }
 
 .canvas {
@@ -58,18 +57,19 @@ i{
   padding: 5em;
 }
 
-.element {
+#element {
   height: 3.5rem;
   width: 3.5rem;
-  background-color: rgb(150, 213, 255);
   display: inline-block;
   text-align: center;
+  font-family: 'Montserrat';
   margin: 10px 15px;
   padding: 18px;
   border-radius: 1rem;
-  font-size: 1.2em;
+  font-size: 1.1em;
   vertical-align: middle;
   box-sizing: border-box;
+  box-shadow: 0 0 0.5em  rgba(0,0,0,0.6);
 }
 
 .iconBtn {
@@ -115,3 +115,14 @@ i{
   margin: 1em;
 }
 
+  /*TEMA OSCURO*/
+  .darkThemePrimary {  background-color: #1a1a2a }
+  .darkThemeTitle {    color : aliceblue  }
+  .darkThemeItem {background-color: rgb(150, 213, 255) ;}
+  .darkThemeLateral {background-color: #2e2e41}
+
+  /*TEMA CLARO*/
+  .lightThemePrimary {  background-color: #FEFEFE }
+  .lightThemeTitle { color : #1a1a2a  }
+  .lightThemeItem {background-color: #0099ff; color: #fff;}
+  .lightThemeLateral, .lightThemeHr {background-color: #0099ff;}
