@@ -11,34 +11,32 @@
 </head>
 <body>
     <div id="app">
-        <div id="header" :class="{darkTheme : (ThemeFA.type == 1), lightTheme : (ThemeFA.type == 0)}">
-            <h1 id="Title" :class="{darkThemeTitle : (ThemeFA.type == 1), lightThemeTitle : (ThemeFA.type == 0)}">
-                ANIMATED <i :class="{darkThemeItalic : (ThemeFA.type == 1), lightThemeItalic : (ThemeFA.type == 0)}">QUICKSORT</i>
+        <div id="header" :class="backgroundClassName">
+            <h1 id="Title" :class="fontClassName">
+                ANIMATED <i :style="{color : italicColor}">QUICKSORT</i>
             </h1>
             <button class="iconBtn">
-                <i v-bind:class="ThemeFA.class" id="themeButton" v-on:click="switchTheme(ThemeFA)"></i>
+                <i v-bind:class="FAicon" :style="{color : italicColor}" id="themeIcon" v-on:click="switchTheme()"></i>
             </button>
         </div>
-    <hr :class="{darkThemeHr : (ThemeFA.type == 1), lightThemeHr : (ThemeFA.type == 0)}"/>
+    <hr :class="itemClassName"/>
         <div>
             <div class="canvas">
                 <div class="array">
                     <!-- v-for para crear varios divs, uno para cada elemento de la lista-->>
                     <!-- v-bind:id o :id para linkar el id del elemento del DOM con su posición en el array-->
-                    <div id="element" 
-                    :class="{darkThemeItem : (ThemeFA.type == 1), lightThemeItem : (ThemeFA.type == 0)}" 
-                    v-for="element in elements" :id="elements.indexOf(element)">{{element}}</div>
+                    <div id="element" :class="itemClassName" v-for="element in elements" :id="elements.indexOf(element)">{{element}}</div>
                 </div>
             </div>
-            <div class="lateral" :class="{darkThemeLateral : (ThemeFA.type == 1), lightThemeLateral : (ThemeFA.type == 0)}">
-                <button class="lateral_btn" id="strategy_btn">
+            <div class="lateral" :class="lateralClassName">
+                <button class="lateral_btn" id="regen_btn" @click="regenVector">
                     {{message}}
                 </button>
                 <form id="data">
                     <label for="nodes">Nº Nodos</label>
-                    <input type="number" id="nodes"/>
+                    <input type="number" id="nodes" min="3" max="10" v-model="ArrayLength"/>
                 </form>
-                <button class="lateral_btn" id="create_btn" v-on:click="quickSortArray">
+                <button class="lateral_btn" id="create_btn" v-on:click="quickSortArray(elements, 0, elements.length)">
                     ANIMAR
                 </button>
             </div>
