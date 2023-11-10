@@ -16,7 +16,7 @@
                 ANIMATED <i :class="{darkThemeItalic : (ThemeFA.type == 1), lightThemeItalic : (ThemeFA.type == 0)}">QUICKSORT</i>
             </h1>
             <button class="iconBtn">
-                <i id="italicTitle" v-bind:class="ThemeFA.class" id="themeIcon " v-on:click="switchTheme(ThemeFA)"></i>
+                <i v-bind:class="ThemeFA.class" id="themeButton" v-on:click="switchTheme(ThemeFA)"></i>
             </button>
         </div>
     <hr :class="{darkThemeHr : (ThemeFA.type == 1), lightThemeHr : (ThemeFA.type == 0)}"/>

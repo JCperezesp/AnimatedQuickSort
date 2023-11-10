@@ -16,14 +16,18 @@ const app = Vue.createApp({
     switchTheme(ThemeFA) {
       console.log("theme type vale " + ThemeFA.type)
       if(ThemeFA.type === 1) {
+        //change theme to light
         ThemeFA.class = "fa-solid fa-circle-half-stroke fa-flip-horizontal fa-xl"
         ThemeFA.type = 0;
         document.body.style.backgroundColor = "#FEFEFE"
+    
       }
       else {
+        //change theme
         ThemeFA.class = "fa-solid fa-circle-half-stroke fa-xl";
         ThemeFA.type = 1;
         document.body.style.backgroundColor = "#1a1a2a"
+        document.getElementById("ItalicTitle").style.color = rgb(150, 213, 255);
       }
 
     }
